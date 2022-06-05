@@ -23,16 +23,19 @@
 
     <FrameLayout
         android:id="@+id/option_tile"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_gravity="center_horizontal"
-        android:paddingHorizontal="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:paddingHorizontal="20dp"
         android:paddingVertical="10dp"
         android:background="@drawable/option_border_custom">
-        <ImageView
-            android:id="@+id/option_thumbnail"
+
+        <TextView android:id="@+id/option_title"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:textAppearance="@style/OptionTitleTextAppearance"/>
 
     </FrameLayout>
 

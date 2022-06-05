@@ -133,25 +133,6 @@ public class UiThemingSettings extends DashboardFragment implements OnPreference
     }
 
     @Override
-    protected List<AbstractPreferenceController> createPreferenceControllers(Context context) {
-        return buildPreferenceControllers(context, getSettingsLifecycle());
-    }
-
-    private static List<AbstractPreferenceController> buildPreferenceControllers(
-            Context context, Lifecycle lifecycle) {
-        final List<AbstractPreferenceController> controllers = new ArrayList<>();
-        controllers.add(new OverlayCategoryPreferenceController(context,
-                "android.theme.customization.font"));
-        controllers.add(new OverlayCategoryPreferenceController(context,
-                "android.theme.customization.icon_pack"));
-        controllers.add(new OverlayCategoryPreferenceController(context,
-                "android.theme.customization.signal_icon"));
-        controllers.add(new OverlayCategoryPreferenceController(context,
-                "android.theme.customization.wifi_icon"));
-        return controllers;
-    }
-
-    @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         final ContentResolver resolver = getActivity().getContentResolver();
         if (preference == mUseWall) {
@@ -180,11 +161,6 @@ public class UiThemingSettings extends DashboardFragment implements OnPreference
     public static final BaseSearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
             new BaseSearchIndexProvider(R.xml.ui_theming) {
 
-                @Override
-                public List<AbstractPreferenceController> createPreferenceControllers(
-                        Context context) {
-                    return buildPreferenceControllers(context, null);
-                }
             };
 
     private String getLockScreenCustomClockFace() {
